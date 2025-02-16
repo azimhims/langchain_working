@@ -6,7 +6,7 @@ __pycache__/
 # Ignore virtual environment folders
 venv/
 .env/
-
+env/
 # Ignore VS Code settings folder
 .vscode/
 

@@ -1,6 +1,4 @@
-# using langchain create simple chatbot with chain features avaliable
-#from langchain import LangChain
-
+# basic structure of langchain application
 
 
 from langchain_google_genai import GoogleGenerativeAI

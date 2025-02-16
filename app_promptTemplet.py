@@ -8,8 +8,8 @@ load_dotenv()
 chatmodel = ChatGroq(model = 'llama-3.3-70b-versatile')
 
 prompt = PromptTemplate.from_template("give me joke about {contents}")
-#promptTemplete is a string so there is no need to fstirng in above prompt.
+#promptTemplete is a string so there is no need to use fstirng in above prompt.
 formated_prompt = prompt.format(contents="dog")
-print(prompt)
+
 result = chatmodel.invoke([formated_prompt])
 print(result.content)
