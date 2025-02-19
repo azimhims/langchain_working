@@ -26,6 +26,7 @@ def scrape_daraz(model_name):
             "website": "Daraz.pk",
             "price": soup.select_one(".price").text.strip() if soup.select_one(".price") else "N/A",
             "warranty": soup.select_one(".warranty-text").text.strip() if soup.select_one(".warranty-text") else "N/A",
+            "Specifications": soup.select_one(".spec-list").text.strip() if soup.select_one(".spec-list") else "N/A",
             "reviews": [review.text.strip() for review in soup.select(".review-content")],
         }
         return product
@@ -44,7 +45,8 @@ def scrape_priceoye(model_name):
         product = {
             "website": "PriceOye.pk",
             "price": soup.select_one(".price-box").text.strip() if soup.select_one(".price-box") else "N/A",
-            "warranty": "1 Year",  # PriceOye often lists warranty in product titles
+            "warranty": soup.select_one(".warranty-text").text.strip() if soup.select_one(".warranty-text") else "N/A",
+            "Specifications": soup.select_one(".spec-list").text.strip() if soup.select_one(".spec-list") else "N/A",
             "reviews": [review.text.strip() for review in soup.select(".rating-reviews")],
         }
         return product
