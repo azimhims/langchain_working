@@ -20,7 +20,8 @@ validation_prompt = PromptTemplate.from_template(
 validation_chain = validation_prompt|chatmodel|StrOutputParser()
 
 
-parallel_chain = RunnableParallel({'best_bowler': best_bowler_prompt|chatmodel|StrOutputParser(),
+parallel_chain = RunnableParallel({
+    'best_bowler': best_bowler_prompt|chatmodel|StrOutputParser(),
     'top_score':top_score_prompt|chatmodel|StrOutputParser(),
     'winning_team':winnig_team_prompt|chatmodel|StrOutputParser(),
     'host_country':host_country_prompt|chatmodel|StrOutputParser()}
