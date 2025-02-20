@@ -23,7 +23,7 @@ def scrape_daraz(model_name):
         
         # Extract data (update selectors based on Daraz's current HTML)
         product = {
-            "website": "Daraz.pk",
+            "website": url,
             "price": soup.select_one(".price").text.strip() if soup.select_one(".price") else "N/A",
             "warranty": soup.select_one(".warranty-text").text.strip() if soup.select_one(".warranty-text") else "N/A",
             "Specifications": soup.select_one(".spec-list").text.strip() if soup.select_one(".spec-list") else "N/A",
